@@ -1,0 +1,80 @@
+.panel-container {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  width: 920px;
+  height: 400;
+}
+
+.panel-left {
+  flex: none; /* manual resize */
+  width: 450px;
+  height: 400px;
+  background-color: lightyellow;
+}
+.splitter {
+  flex: none; /* manual resize */
+  width: 15px;
+  height: 400px;
+  background-color: dimgray;
+}
+.panel-right {
+  flex: none; /* manual resize */
+  width: 450px;
+  height: 400px;
+  background-color: lightyellow;
+}
+
+/* TEXTAREA AUTO RESIZE STYLES BEGIN */
+
+/* The .hiddendiv styles are added with JS.
+   You can remove the JS lines and use CSS instead */
+.hiddendiv {
+  display: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* the styles for 'txta' are applied to both the textarea and the hidden clone */
+/* these must be the same for both */
+.txta {
+    width: 445px;
+    height: 395px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    overflow: hidden;
+    line-height: 1.4;
+    resize: none;
+    background-color: transparent;
+  }
+  /* TEXTAREA AUTO RESIZE STYLES END */
+
+  /* from https://www.bestcssbuttongenerator.com/#/26 */
+  .myButton {
+    box-shadow:inset 0px 1px 0px 0px #fff6af;
+    background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+    background-color:#ffec64;
+    border-radius:6px;
+    border:1px solid #ffaa22;
+    display:inline-block;
+    cursor:pointer;
+    color:#333333;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #ffee66;
+  }
+  .myButton:hover {
+    background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+    background-color:#ffab23;
+  }
+  .myButton:active {
+    position:relative;
+    top:1px;
+  }
+  
