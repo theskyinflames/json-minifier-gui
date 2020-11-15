@@ -15,7 +15,6 @@ import (
 )
 
 func main() {
-	// Set logger
 	l := log.New(log.Writer(), log.Prefix(), log.Flags())
 
 	// Create astilectron
@@ -28,7 +27,6 @@ func main() {
 	}
 	defer a.Close()
 
-	// Handle signals
 	a.HandleSignals()
 
 	// Start
@@ -52,11 +50,11 @@ func main() {
 		l.Fatal(fmt.Errorf("main: creating window failed: %w", err))
 	}
 
-	// Create the menu
+	// Add the window menu
 	addMenu(a, w)
 
-	min := minify.New()
 	// This will listen to messages sent by Javascript
+	min := minify.New()
 	w.OnMessage(func(m *astilectron.EventMessage) interface{} {
 		const (
 			cmdFormatPrefix = "CMD_FORMAT_"
@@ -64,9 +62,10 @@ func main() {
 		)
 
 		var s string
-		m.Unmarshal(&s)
+		if err := m.Unmarshal(&s); err != nil {
+			panic(err)
+		}
 
-		// Process message
 		switch {
 		case s == "ready":
 			l.Println("app ready")
