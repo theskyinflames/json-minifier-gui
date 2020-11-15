@@ -12,7 +12,7 @@
     <p>
         <div class="panel-container">
             <nav id="json" class="panel-left">
-                <textarea placeholder="raw" id="json-raw" class="txta"></textarea>
+                <textarea placeholder="paste json here" id="json-raw" class="txta" onpaste="hideMsg()"></textarea>
             </nav>
             <nav class="splitter"></nav>
             <nav id="formatted" class="panel-right">
@@ -33,6 +33,7 @@
             dispatch(message)
         });
     });
+    reset();
     document.getElementById("json-raw").focus();
 </script>
 

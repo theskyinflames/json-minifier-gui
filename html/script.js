@@ -29,6 +29,10 @@ function minimize(){
 function reset(){
     document.getElementById('json-raw').value = '';
     document.getElementById('formatted').innerText = '';
-    document.getElementById('msg').innerText = "Please, paste your JSON";
+    document.getElementById('msg').innerText = 'Please, paste your JSON';
     document.getElementById('json-raw').focus();
+}
+
+function hideMsg(){
+    document.getElementById('msg').innerText = '';
 }
